@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/plugins/geosudRefToa" >
+        <file>icon.png</file>
+		<file>icon_geosud.png</file>
+    </qresource>
+</RCC>
