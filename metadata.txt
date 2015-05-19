@@ -26,7 +26,7 @@ tags=landsat, remote sensing, raster
 
 homepage=http://equipex-geosud.fr/
 tracker=http://hub.qgis.org/projects/geosudreftoa/issues
-repository=https://github.com/kenoz/GeosudRefToa
+repository=https://github.com/kenoz/GeosudRefToa_v2
 category=Raster
 icon=icon.png
 # experimental flag
