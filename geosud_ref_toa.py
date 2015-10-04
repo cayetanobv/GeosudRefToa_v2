@@ -73,7 +73,7 @@ class geosudRefToa():
         # TODO: We are going to let the user set this up in a future iteration
         self.toolbar = self.iface.addToolBar(u'geosudRefToa')
         self.toolbar.setObjectName(u'geosudRefToa')
-        
+
         #KO_QGis Info Bar
         self.bar = QgsMessageBar()
         self.bar.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
@@ -212,7 +212,7 @@ class geosudRefToa():
         imgList = QFileDialog.getOpenFileNames(self.dlg,
                                                u'Satellite Image or Bands',
                                                self.lastUsedPath('imgPath'),
-                                               "Image file(s) (*.tif)")
+                                               "Image files (*.tif)")
         if imgList != []:
             self.setLastUsedPath('imgPath',os.path.dirname(imgList[0]))
         self.dlg.leInput.setText(','.join(imgList))
@@ -298,7 +298,7 @@ class geosudRefToa():
                                                2:green<br>\
                                                3:blue<br>\
                                                4:nir<br>'}
-                     
+
         try:
             instrument = self.dlg.comboBox.currentText()
             instrumentId = self.dlg.comboBox.currentIndex()
@@ -336,7 +336,7 @@ class geosudRefToa():
                                  level=QgsMessageBar.WARNING, duration=3)
 
 
-    #KO_Import Metadata                
+    #KO_Import Metadata
     def importMetadata(self, instrumentId):
         """Imports required parameters from the metadata"""
         if instrumentId == 0:
@@ -353,7 +353,7 @@ class geosudRefToa():
         self.meta.getDate()
         self.meta.getDistEarthSun()
         self.meta.getSolarIrrad()
-            
+
     #KO_Processing TOA reflectance
     def processToa(self):
         """Converts DN to TOA reflectance"""
@@ -380,7 +380,7 @@ class geosudRefToa():
         progressMessageBar.layout().addWidget(progress)
 
         self.iface.messageBar().pushWidget(progressMessageBar, self.iface.messageBar().INFO)
-        
+
         if self.dlg.comboBox.currentIndex() == 0:
             bandList = self.dlg.leInput.text().split(',')
             idBand = {int(os.path.splitext(os.path.basename(i))[0][-1])-1:i for i in bandList}
@@ -402,7 +402,7 @@ class geosudRefToa():
         endTime = time.time()
 
         self.dlg.teHistory.append('<b>reflectance processing duration:</b><br>{0} seconds<br>'.format(str(endTime - startTime)))
-        
+
     #KO_Last used path
     def lastUsedPath(self, key):
         """Saves the last used path"""
@@ -483,7 +483,7 @@ class geosudRefToa():
     def clearHistory(self):
         """Clears History text"""
         self.dlg.teHistory.clear()
-        
+
     def run(self):
         """Run method that performs all the real work"""
         # show the dialog
@@ -499,4 +499,3 @@ class geosudRefToa():
             self.dlg.leInput.clear()
             self.clearFields()
             self.unCheck()
-            
