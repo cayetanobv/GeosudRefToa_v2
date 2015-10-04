@@ -127,6 +127,12 @@
               <height>17</height>
              </rect>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+              <italic>true</italic>
+             </font>
+            </property>
             <property name="text">
              <string>reflectance (32 bits)</string>
             </property>
@@ -136,9 +142,15 @@
              <rect>
               <x>10</x>
               <y>50</y>
-              <width>141</width>
+              <width>161</width>
               <height>17</height>
              </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+              <italic>true</italic>
+             </font>
             </property>
             <property name="text">
              <string>milli-reflectance (16 bits)</string>
@@ -226,7 +238,8 @@
            <property name="font">
             <font>
              <family>Arial</family>
-             <pointsize>8</pointsize>
+             <pointsize>11</pointsize>
+             <italic>false</italic>
             </font>
            </property>
            <property name="text">
